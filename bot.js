@@ -27,6 +27,7 @@ bot.command(["gene","Gene","GENE"],(ctx)=>{
     if(inputArray.length==1){
         ctx.reply("Please input the text/query!");
     }else{
+        console.log(input);
         inputArray.shift();
         message=inputArray.join(" ");
         axios.get(`https://openairestapi.vercel.app/image?text=${message}&api=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`)
