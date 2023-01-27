@@ -33,7 +33,7 @@ bot.command(["gene","Gene","GENE"],(ctx)=>{
         inputArray.shift();
         message=inputArray.join(" ");
         apikey=process.env.API;
-        axios.get(`https://openairestapi.vercel.app/image?text=${message}&api=${API}`)
+        axios.get(`https://openairestapi.vercel.app/image?text=${message}&api=${apikey}`)
         .then(response => {
             bot.telegram.sendPhoto(ctx.chat.id, response.data.image_url)
           })
