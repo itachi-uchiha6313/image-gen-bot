@@ -1,0 +1,20 @@
+{
+  "name": "image-gen-bot",
+  "version": "1.0.0",
+  "description": "A image generation telegram Bot",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "image generator",
+    "DALL-E",
+    "DALL-E 2.0"
+  ],
+  "author": "Tofu",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.2.5",
+    "telegraf": "3.32"
+  }
+}
