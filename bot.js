@@ -1,7 +1,9 @@
 const Telegraf = require('telegraf');
 const axios = require("axios");
+require('dotenv').config()
 
-const bot = new Telegraf('5868737604:AAFk-HgVpAloZNBGYO7F4T15eKey6FF_CL8');
+
+const bot = new Telegraf(process.env.BOT_TOKEN);
 
 const helpMessage= `
 Say something to me and I will generate image according to your text
@@ -30,7 +32,8 @@ bot.command(["gene","Gene","GENE"],(ctx)=>{
         console.log(input);
         inputArray.shift();
         message=inputArray.join(" ");
-        axios.get(`https://openairestapi.vercel.app/image?text=${message}&api=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`)
+        apikey=process.env.API;
+        axios.get(`https://openairestapi.vercel.app/image?text=${message}&api=${API}`)
         .then(response => {
             bot.telegram.sendPhoto(ctx.chat.id, response.data.image_url)
           })
